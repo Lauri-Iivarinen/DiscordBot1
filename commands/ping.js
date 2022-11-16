@@ -5,9 +5,14 @@ const {SlashCommandBuilder} = require('discord.js');
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('ping')
-        .setDescription('Replies with Pong!'),
+        .setDescription('Replies with Pong! and something')
+        .addStringOption(option =>
+            option.setName('input')
+                .setDescription('The input to echo back')
+                .setRequired(true)),
     //vastaus
     async execute(e) {
-        await e.reply('Pong!')
+        const msg = e.options.getString('input')
+        await e.reply('Pong! and ' + msg)
     }
 }
