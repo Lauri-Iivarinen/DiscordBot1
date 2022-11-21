@@ -53,7 +53,7 @@ module.exports = {
             memberArray.push(member)
         })
 
-        //return if amount of groups is greater than the amount of voice channels
+        //Return if amount of groups is greater than the amount of voice channels
         if(value > channelsArray.length){
             msg.reply("You have too few voice channels, create more!")
             return
