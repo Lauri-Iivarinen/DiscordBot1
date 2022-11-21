@@ -9,7 +9,7 @@ const { Client, Events, GatewayIntentBits, Collection,} = require('discord.js');
 const { config } = require('node:process');
 
 // Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ intents: [GatewayIntentBits.Guilds,GatewayIntentBits.GuildVoiceStates] });
 
 // When the client is ready, run this code (only once)
 // We use 'c' for the event parameter to keep it separate from the already defined 'client'
@@ -35,19 +35,31 @@ for (const file of commandFiles) {
 		console.log(`[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`);
 	}
 }
+
+client.on('voiceStateUpdate',(oldState,newState) =>{
+	/*
+	console.log("-------------------------------OLD STATE-------------------")
+	console.log(oldState)
+	console.log("-------------------------------NEW STATE-------------------")
+	console.log(newState)
+	*/
+})
+
 //Paste for reading commands and executing them
 client.on(Events.InteractionCreate, async interaction => {
 	if (!interaction.isChatInputCommand()) return;
 
 	const command = interaction.client.commands.get(interaction.commandName);
 
+
 	if (!command) {
 		console.error(`No command matching ${interaction.commandName} was found.`);
 		return;
 	}
 
+	//TODO clean
 	try {
-		await command.execute(interaction);
+		await command.execute(interaction)
 	} catch (error) {
 		console.error(error);
 		await interaction.reply({ content: 'There was an error while executing this command!', ephemeral: true });
