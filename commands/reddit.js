@@ -8,7 +8,8 @@ module.exports = {
             .setDescription('Some comments may have been better left un-typed'),
             async execute(e){
                 try{
-                    //fetch url for a cat gif
+                    //fetch url (displays as an image in discord)
+                    //for a cursed commet from r/cursedcomments
                     const connection = await fetch('https://www.reddit.com/r/cursedcomments.json')
                     const json = await connection.json()
                     const index = Math.round(Math.random() * (json.data.children.length - 2) + 1)

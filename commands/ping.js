@@ -12,6 +12,7 @@ module.exports = {
                 .setRequired(true)),
     //vastaus
     async execute(e) {
+        //template/example/test
         const msg = e.options.getString('input')
         await e.reply('Pong! and ' + msg)
     }

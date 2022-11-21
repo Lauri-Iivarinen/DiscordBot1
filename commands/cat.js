@@ -8,7 +8,7 @@ module.exports = {
             .setDescription('Get funny GIF of a cat'),
             async execute(e){
                 try{
-                    //fetch url for a cat gif
+                    //fetch url for a cat gif (displays as a gif in discord)
                     const connection = await fetch('https://api.giphy.com/v1/gifs/search?q=cats&api_key=' + giphyAPI)
                     const json = await connection.json()
                     const index = Math.round(Math.random() * (json.data.length-1))

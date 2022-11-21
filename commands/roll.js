@@ -5,6 +5,7 @@ module.exports={
             .setName('roll')
             .setDescription('Rolls an integer between 1-100'),
         async execute(e){
+            //Roll an integer between 1-100
             let value = Math.round(Math.random() * 99) + 1;
             await e.reply(e.user.username + ' rolled: **' + value + '**')
         }
