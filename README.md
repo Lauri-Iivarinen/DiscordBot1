@@ -10,5 +10,5 @@ Implemented commands (in order of implementation):
   - /roll rolls number from 1-100
   - /cat fetches gif of a cat from giphy
   - /cursed fetches an image from the frontpage of r/cursedcomments
-  - /split x gets the users current voicechannel and subdivides all channel members into smaller groups which are assigned a new voicechannnel (automatically transferred)
+  - /split x (this rocks!) gets the users current voicechannel and subdivides all channel members into smaller groups which are assigned a new voicechannnel (automatically transferred)
   
