@@ -12,3 +12,4 @@ Implemented commands (in order of implementation):
   - /cursed fetches an image from the frontpage of r/cursedcomments
   - /split x (this rocks!) gets the users current voicechannel and subdivides all channel members into smaller groups which are assigned a new voicechannnel (automatically transferred)
   
+<img width="722" alt="Näyttökuva 2023-12-5 kello 23 39 50" src="https://github.com/Lauri-Iivarinen/DiscordBot1/assets/94760484/6eac7ac6-87ab-422c-9bb4-c629cf9e7a44">
